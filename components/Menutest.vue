@@ -13,11 +13,11 @@
 </template>
 
 <script>
-  import Menu from '@/components/Menu'
-import { computed } from 'vue';
+  import Navbar from '@/components/Navbar'
+
   export default {
     components: {
-      Menu
+      Navbar
     },
     data() {
       return {
@@ -27,9 +27,8 @@ import { computed } from 'vue';
     computed: {
       authUrl(){
         const clientId = 'db0b43c29907d29e8996';
-        const redirectUri = 'http://localhost:3000/callback';
         const scope = "read:user";
-        return `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
+        return `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${process.env.REDIRECT_URI}&scope=${scope}&response_type=token`;
       }
     },
     methods: {
@@ -70,13 +69,11 @@ import { computed } from 'vue';
         .then(data => console.log(data.data.user.issues))
         .catch(error => console.error(error));
       },
-      loginWithGitHub() {
+      async loginWithGitHub() {
         {
           console.log('loginWithGitHub');
-          const clientId = 'db0b43c29907d29e8996';
-          const redirectUri = 'http://localhost:3000/callback';
           const scope = "read:user";
-          return `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
+          document.location.href = (`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&scope=${scope}&response_type=token`)
         }
       },
     }

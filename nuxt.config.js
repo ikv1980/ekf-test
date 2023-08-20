@@ -22,7 +22,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/node_modules/bootstrap/dist/css/bootstrap.min.css',
-    // '@/assets/css/main.css'
+    '@/assets/css/main.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -38,55 +38,26 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // '@nuxtjs/auth'
-    // '@nuxtjs/auth-next'
+    '@nuxt/http',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
 
-  auth: {
-    strategies: {
-      github: {
-        client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
-      },
-    },
-  },
-  
-
   // Переменные окружения (личные)
-
-  // env: {
-  //   CLIENT_ID: process.env.CLIENT_ID,
-  //   // URL для получения code
-  //   URL_AUTORIZE: process.env.URL_AUTORIZE,
-  //   // URL для получения tokena пользователя
-  //   URL_ACCESS_TOKEN: process.env.URL_ACCESS_TOKEN,
-  //   // Настроечные параметры для OAuth
-  //   HOMEPAGE_URL: process.env.HOMEPAGE_URL,
-  //   CALLBACK_URL: process.env.CALLBACK_URL,
-  //   CLIENT_ID: process.env.CLIENT_ID,
-  //   CLIENT_SECRET: process.env.CLIENT_SECRET,
-  //   PERSONAL_TOKEN: process.env.PERSONAL_TOKEN,
-  // }
+  env: {
+    CLIENT_ID: process.env.CLIENT_ID,
+    // URL для получения code
+    URL_AUTORIZE: process.env.URL_AUTORIZE,
+    SCOPE: process.env.SCOPE,
+    // URL для получения tokena пользователя
+    URL_ACCESS_TOKEN: process.env.URL_ACCESS_TOKEN,
+    // Настроечные параметры для GitHub OAuth
+    HOMEPAGE_URL: process.env.HOMEPAGE_URL,
+    REDIRECT_URI: process.env.REDIRECT_URI,
+    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+    GITHUB_PERSONAL_TOKEN: process.env.GITHUB_PERSONAL_TOKEN,
+  },
 }
-// Переменные окружения (личные)
-// const dotenv = require('dotenv')
-// dotenv.config()
-// module.exports = {
-//   env: {
-//     CLIENT_ID: process.env.CLIENT_ID,
-//     // URL для получения code
-//     URL_AUTORIZE: process.env.URL_AUTORIZE,
-//     // URL для получения tokena пользователя
-//     URL_ACCESS_TOKEN: process.env.URL_ACCESS_TOKEN,
-//     // Настроечные параметры для OAuth
-//     HOMEPAGE_URL: process.env.HOMEPAGE_URL,
-//     CALLBACK_URL: process.env.CALLBACK_URL,
-//     CLIENT_ID: process.env.CLIENT_ID,
-//     CLIENT_SECRET: process.env.CLIENT_SECRET,
-//     PERSONAL_TOKEN: process.env.PERSONAL_TOKEN,
-//   }
-// }

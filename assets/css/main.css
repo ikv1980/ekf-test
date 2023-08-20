@@ -552,7 +552,7 @@ header a:hover{
 	box-sizing:border-box;
 	background: lightgrey;
 	/*overflow:hidden;*/
-	padding-bottom:200px;
+	/* padding-bottom:200px; */
 	/*padding-top:60px;*/
 	min-height: 100%;
 }
@@ -1055,7 +1055,7 @@ input:not([type=checkbox]):not([type="file"]):not(.global_search):not(.chosen-fo
 	text-shadow: 0 1px 0 #fff;
 	box-sizing: border-box;
 	font-size: 8pt;
-	max-height: 25px;
+	/* max-height: 25px; */
 }
 input.global_search {
 	background: rgb(45, 54, 57);
